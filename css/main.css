@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.frame_navbar {
+  width: 94%;
+  height: 10vh;
+  margin-left: 2%;
+  margin-top: 20px;
+  border-radius: 15px;
+  background-color: white;
+  padding-top: 0.5vh;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+}
+.frame_navbar_body {
+  width: 99.5%;
+  height: 96%;
+  margin-left: 0.2%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+}
+.frame_navbar_logo {
+  height: 8vh;
+  margin-left: 1vw;
+}
+.logo_text {
+  font-family: "Jacquarda Bastarda 9", serif;
+  color: white;
+  font-weight: 400;
+  font-size: 5vh;
+  padding-top: 2vh;
+}
+.body_content {
+  display: flex;
+}
+.scrollable_frame {
+  width: 60%;
+  height: 80vh;
+  background: linear-gradient(
+    45deg,
+    rgb(191, 96, 178),
+    rgb(231, 75, 112),
+    rgb(191, 96, 178),
+    rgb(231, 75, 112),
+    rgb(191, 96, 178)
+  );
+  border-radius: 30px;
+  margin-top: 20px;
+  margin-left: 2%;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+.scrollable_frame_body {
+  width: 98%;
+  height: 97.5%;
+  background-color: rgba(25, 25, 25, 01);
+  border-radius: 30px;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+.chat_area {
+  width: 31%;
+  height: 80vh;
+  background: linear-gradient(
+    45deg,
+    rgb(191, 96, 178),
+    rgb(231, 75, 112),
+    rgb(191, 96, 178),
+    rgb(231, 75, 112),
+    rgb(191, 96, 178)
+  );
+  margin-top: 20px;
+  border-radius: 30px;
+  margin-left: 3%;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+}
+.chat_area_body {
+  width: 96%;
+  height: 97.5%;
+  margin-left: 2%;
+  margin-top: 1.5%;
+  background-color: rgba(25, 25, 25, 1);
+  border-radius: 30px;
+  padding-top: 3vh;
+}
+.chatarea_msg {
+  width: 90%;
+  height: 50vh;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 1);
+  margin-left: 5%;
+  padding: 3vw;
+  z-index: 1000; /* Keep this higher to ensure it's on top */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
+  position: relative; /* Needed for stacking context */
+}
+
+.drop1 {
+  width: 20%;
+  height: 11vh;
+  margin-left: 5vw;
+  background-color: rgb(110, 110, 110);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  position: absolute; /* Position it relative to its closest positioned ancestor */
+  top: 0; /* Start above the message panel */
+  z-index: 22; /* Ensure this is lower than .chatarea_msg */
+  transition: transform 0.3s ease;
+  color: white;
+  font-size: 1em;
+  padding-top: 40px;
+  padding-left: 20px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
+  transform: translateY(270%); /* Start hidden above the chat area */
+}
+.drop2 {
+  transform: translateY(270%);
+  z-index: 21;
+  background-color: rgba(70, 70, 70, 0.9);
+}
+.logo_align_center {
+  display: flex;
+  align-items: center;
+}
+.navbar_button {
+  display: flex;
+  margin-left: 67vw;
+}
+.navbar_buttons {
+  height: 6vh;
+  padding: 1vw;
+  padding-top: 0.8vw;
+  background-color: rgb(231, 75, 112);
+  border-radius: 10px;
+  color: white;
+  font-size: 1em;
+  font-weight: 700;
+  border: none;
+  margin-top: -7.1vh;
+  margin-right: 2vw;
+  flex-shrink: 0;
+  transition-duration: 0.2s;
+  border: 2px solid transparent;
+}
+.animate_click:hover {
+  border: 2px solid white;
+  background-color: rgba(231, 75, 112, 0.8);
+}
+.animate_click:active {
+  transform: translate(2px, 2px);
+  transition-duration: 0s;
+}
+.searchbar_msg {
+  display: flex; /* Enables flexbox for alignment */
+  justify-content: flex-end; /* Aligns children to the right */
+  align-items: center; /* Centers items vertically */
+  margin-top: 16vh; /* Space above the input */
+}
+
+.input_container {
+  position: relative; /* Position relative for absolutely positioned children */
+  width: calc(100% - 60px); /* Adjust width to make space for button */
+}
+
+.msg_input {
+  width: 90%; /* Full width for input */
+  height: 45px; /* Height to match button */
+  border-radius: 50px; /* Rounded corners */
+  border: none; /* Remove border */
+  outline: none; /* Remove outline */
+  padding: 0 15% 0 3%; /* Add padding to account for button space */
+  margin-right: 4%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
+}
+
+.clickable_msg {
+  position: absolute; /* Position absolute to overlay input */
+  right: 10px; /* Space from the right */
+  top: 86.8%; /* Center vertically */
+  transform: translateX(-190%); /* Adjust position to center */
+  height: 35px; /* Match input height */
+  width: 35px; /* Width for round button */
+  border-radius: 50%; /* Make it round */
+  color: white; /* Button text color */
+  background-color: rgb(231, 75, 112); /* Button color */
+  border: none; /* Remove border */
+  margin-left: -30%;
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.clickable_msg:hover {
+  background-color: rgba(231, 75, 112, 0.8); /* Hover effect */
+}
