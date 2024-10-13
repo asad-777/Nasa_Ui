@@ -1,0 +1,48 @@
+{
+  "name": "worldmap-panel",
+  "version": "1.0.6",
+  "description": "Worldmap Panel Plugin for Grafana",
+  "main": "src/module.js",
+  "scripts": {
+    "build": "grafana-toolkit plugin:build",
+    "dev": "grafana-toolkit plugin:dev",
+    "watch": "grafana-toolkit plugin:dev --watch",
+    "lint": "eslint --cache --ignore-path ./.gitignore --ext .js,.jsx,.ts,.tsx .",
+    "lint:fix": "yarn lint --fix",
+    "test": "grafana-toolkit plugin:test",
+    "test:ci": "jest --passWithNoTests --maxWorkers 4",
+    "ci-build": "grafana-toolkit plugin:ci-build",
+    "typecheck": "tsc --noEmit",
+    "sign": "npx --yes @grafana/sign-plugin@latest"
+  },
+  "keywords": [
+    "worldmap",
+    "grafana",
+    "plugin",
+    "panel"
+  ],
+  "author": "Grafana Labs",
+  "license": "MIT",
+  "devDependencies": {
+    "@grafana/eslint-config": "^5.1.0",
+    "@grafana/toolkit": "8.5.22",
+    "@jest/core": "26.6.3",
+    "@types/grafana": "https://git@github.com/CorpGlory/types-grafana.git",
+    "@types/jest": "27.0.2",
+    "@types/lodash": "^4.14.194",
+    "@types/moment": "^2.13.0",
+    "@types/tinycolor2": "1.4.3",
+    "tinycolor2": "1.6.0",
+    "jest": "26.6.3",
+    "jest-canvas-mock": "2.3.0",
+    "jest-config": "^27.5.1",
+    "jest-environment-jsdom": "26.6.2",
+    "jquery": "3.6.4",
+    "ts-jest": "26.4.4",
+    "ts-loader": "^5.3.0"
+  },
+  "dependencies": {
+    "lodash": "4.17.21",
+    "pkg.json": "2.0.8"
+  }
+}
